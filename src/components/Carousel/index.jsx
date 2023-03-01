@@ -4,14 +4,6 @@ import { Carousel } from "antd";
 import img1 from "../../assets/img/house1.png";
 import img2 from "../../assets/img/house2.png";
 
-const contentStyle = {
-  height: "571px",
-  color: "#fff",
-  lineHeight: "160px",
-  textAlign: "center",
-  background: "#364d79",
-};
-
 const GenCarousel = () => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
