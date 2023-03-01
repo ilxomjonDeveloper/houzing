@@ -36,11 +36,24 @@ const Container = styled.input`
   border: 1px solid #e6e9ec;
   border-radius: 2px;
   min-width: 120px;
+  color: #0d263b;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "16px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   /* ${getType} */
+  padding-left: ${({icon}) => icon ? "35px" : "20px"};
   outline: none;
 `;
 
-export { Container };
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: ${({ width }) => (width ? `${width}px` : "100%")};
+`
+const Icon = styled.div`
+  position: absolute;
+  left: 10px;
+`
+
+export { Container, Wrapper, Icon };
