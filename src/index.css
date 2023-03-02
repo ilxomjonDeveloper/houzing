@@ -39,4 +39,24 @@ body {
   text-align: center;
   letter-spacing: -0.02em;
   color: #0d263b;
+  margin-bottom: 4px;
+}
+
+.infoDesc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 4px;
+  color: #696969;
+}
+
+
+::-webkit-scrollbar {
+  background: #b5b5b5;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0d263b;
+  border-radius: 10px;
 }
