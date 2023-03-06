@@ -21,43 +21,44 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 
 import noimg from "../../assets/img/noimg.jpeg";
 
-const HouseCard = ({ url, title, bed, bath, garage, ruler, info }) => {
+const HouseCard = ({data = {} }) => {
+  const { attachments, address, city, country, description, houseDetails, price, salePrice } = data;
   return (
-    <Container>
+    <Container className="shadow">
       <ImgContainer>
-        <Img src={url || noimg} />
+        <Img src={attachments && attachments[0].imgPath.includes("https") ? attachments[0].imgPath : noimg} alt="home img"/>
         <CardBtns>
           <CardBtn primary>FEATURED</CardBtn>
           <CardBtn>FOR SALE</CardBtn>
         </CardBtns>
       </ImgContainer>
       <InfoContainer>
-        <div className="subTitle">{title || "New Apartment Nice Wiew"}</div>
-        <div className="infoDesc">{info || "Quincy St, Brooklyn, NY, USA"}</div>
+        <div className="subTitle inline">{city}, {country}, {description}</div>
+        <div className="infoDesc">{address || "Quincy St, Brooklyn, NY, USA"}</div>
         <MoreInfo>
           <MoreInfoItem>
             <Icons.Beds src={beds} />
-            <div className="infoDesc">{bed || 0} Beds</div>
+            <div className="infoDesc">{houseDetails?.beds || 0} Beds</div>
           </MoreInfoItem>
           <MoreInfoItem>
             <Icons.Beds src={baths} />
-            <div className="infoDesc">{bath || 0} Baths</div>
+            <div className="infoDesc">{houseDetails?.bath || 0} Baths</div>
           </MoreInfoItem>
           <MoreInfoItem>
             <Icons.Beds src={cars} />
-            <div className="infoDesc">{garage || 0} Garage</div>
+            <div className="infoDesc">{houseDetails?.garage || 0} Garage</div>
           </MoreInfoItem>
           <MoreInfoItem>
             <Icons.Beds src={rulers} />
-            <div className="infoDesc">{ruler || 0} Sq Ft</div>
+            <div className="infoDesc">Area {houseDetails?.area || 0} kv</div>
           </MoreInfoItem>
         </MoreInfo>
       </InfoContainer>
       <Line></Line>
       <CardFooter>
         <div>
-          <div className="infoDesc">$2,800/mo</div>
-          <div className="subTitle">$7,500/mo</div>
+          <div className="infoDesc">${salePrice || 0}/mo</div>
+          <div className="subTitle">${price || 0}/mo</div>
         </div>
         <CardFooter.Icons>
           <Icons.Resize src={resize} />

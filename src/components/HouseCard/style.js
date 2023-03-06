@@ -26,6 +26,7 @@ const InfoContainer = styled.div`
 const Img = styled.img`
   width: 100%;
   max-height: 220px;
+  min-height: 220px;
 `;
 
 const CardBtns = styled.div`
