@@ -2,10 +2,18 @@ import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 1440px;
+  width: 100%;
+  margin: auto;
   padding: var(--padding);
-  display: flex;
+  
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px; */
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 20px;
 `;
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as arrow } from "../../assets/icons/arrow.svg";
 
 const Container = styled.div`
-  height: 571px;
+  height: fit-content;
   position: relative;
 `;
 const Arrow = styled(arrow)`
@@ -14,7 +14,7 @@ const Arrow = styled(arrow)`
   padding: 18px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
-  transform: ${({ left }) => (left ? "rotate(90deg)" : "rotate(-90deg)")};
+  transform: translateY(-50%) ${({ left }) => (left ? "rotate(90deg)" : "rotate(-90deg)")};
   left: ${({ left }) => left && "20px"};
   right: ${({ left }) => !left && "20px"};
   transition: background 0.2s ease;
@@ -26,7 +26,6 @@ const Arrow = styled(arrow)`
 
 const Img = styled.img`
   width: 100%;
-  height: 571px;
 `;
 
 const Blur = styled.div`

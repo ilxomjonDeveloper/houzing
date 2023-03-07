@@ -10,6 +10,9 @@ const Container = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   gap: 20px;
+  width: 100%;
+  margin: auto;
+  max-width: 1440px;
 `
 const Icons = styled.div``;
 Icons.Search = styled(search)`
