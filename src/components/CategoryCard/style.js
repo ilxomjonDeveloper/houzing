@@ -1,10 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as beds } from "../../assets/icons/bed.svg";
-import { ReactComponent as baths } from "../../assets/icons/bath.svg";
-import { ReactComponent as cars } from "../../assets/icons/car.svg";
-import { ReactComponent as rulers } from "../../assets/icons/ruler.svg";
-import { ReactComponent as resize } from "../../assets/icons/resize.svg";
-import { ReactComponent as love } from "../../assets/icons/love.svg";
 
 const Container = styled.div`
   position: relative;
@@ -14,6 +8,9 @@ const Container = styled.div`
   max-height: 380px;
   min-height: 350px;
   background: #ffffff;
+
+  margin-left: 8px;
+  margin-bottom: 20px;
 
   border-radius: 3px;
 `;

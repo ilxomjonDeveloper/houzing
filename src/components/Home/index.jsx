@@ -1,12 +1,12 @@
 import React from "react";
 import Carousel from "../Carousel";
-import CategoryCard from "../CategoryCard";
+import Category from "../Category";
 import { Container } from "./style";
 
 const Home = () => {
   return <Container>
     <Carousel />
-    <CategoryCard />
+    <Category />
   </Container>;
 };
 

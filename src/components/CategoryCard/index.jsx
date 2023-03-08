@@ -1,21 +1,17 @@
 import React from "react";
 import {
   Blur,
-  CardBtn,
-  CardBtns,
   Container,
   Content,
   Img,
-  ImgContainer,
-  InfoContainer,
 } from "./style";
 
 import categoryImg from "../../assets/img/category.png";
 
-const CategoryCard = ({ data = {} }) => {
+const CategoryCard = ({ data = {}, onClick }) => {
   const { name } = data;
   return (
-    <Container className="shadow">
+    <Container onClick={onClick} className="shadow">
       <Img
         src={categoryImg}
         alt="Category Img"
