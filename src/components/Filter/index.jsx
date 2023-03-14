@@ -14,8 +14,8 @@ const Filter = () => {
   useEffect(() => {
     fetch(`${url}/categories/list`)
       .then((res) => res.json())
-      .then((res) => setData(res?.data || []));
-  }, []);
+      .then((res) => setData(res?.data || []))
+  })
 
   const countryRef = useRef();
   const regionRef = useRef();
