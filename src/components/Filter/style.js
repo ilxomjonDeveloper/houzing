@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import {ReactComponent as setting} from "../../assets/icons/setting.svg"
-import {ReactComponent as search} from "../../assets/icons/search.svg"
-import {ReactComponent as houses} from "../../assets/icons/houses.svg"
-
+import { ReactComponent as setting } from "../../assets/icons/setting.svg";
+import { ReactComponent as search } from "../../assets/icons/search.svg";
+import { ReactComponent as houses } from "../../assets/icons/houses.svg";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ const Container = styled.div`
   width: 100%;
   margin: auto;
   max-width: 1440px;
-`
+`;
 const Icons = styled.div``;
 Icons.Search = styled(search)`
   margin-right: 8px;
@@ -32,7 +31,7 @@ const MenuWrapper = styled.div`
   h1 {
     margin-bottom: 10px;
   }
-`
+`;
 const Section = styled.div`
   display: flex;
   gap: 20px;
@@ -40,6 +39,15 @@ const Section = styled.div`
   div {
     width: 200px;
   }
-`
+  select {
+    width: 200px;
+    border: 1px solid #e6e9ec;
+    padding: 0px 10px;
+    outline: none;
+    :focus {
+      border: 1px solid #0061df;
+    }
+  }
+`;
 
-export {Container, Icons, MenuWrapper, Section};
+export { Container, Icons, MenuWrapper, Section };

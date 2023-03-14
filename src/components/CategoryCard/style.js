@@ -9,7 +9,7 @@ const Container = styled.div`
   min-height: 350px;
   background: #ffffff;
 
-  margin-left: 8px;
+  margin-left: 50px;
   margin-bottom: 20px;
 
   border-radius: 3px;

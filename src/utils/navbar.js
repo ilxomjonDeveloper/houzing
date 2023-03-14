@@ -1,8 +1,8 @@
 import React from "react";
 import useId from "../hooks/useId";
 // import HomePage from "../pages/Home";
-const PropertiesPage = React.lazy((_) => import("../pages/Properties"));
-const HomePage = React.lazy((_) => import("../pages/Home"));
+const PropertiesPage = React.lazy(() => import("../pages/Properties"));
+const HomePage = React.lazy(() => import("../pages/Home"));
 
 // import PropertiesPage from "../pages/Properties";
 

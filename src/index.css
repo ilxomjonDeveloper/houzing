@@ -72,6 +72,15 @@ body {
   align-items: center;
 }
 
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slick-dots li button:before {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   background: #b5b5b5;
   width: 10px;

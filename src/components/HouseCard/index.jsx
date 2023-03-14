@@ -22,7 +22,7 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 import noimg from "../../assets/img/noimg.jpeg";
 
 const HouseCard = ({data = {} }) => {
-  const { attachments, address, city, country, description, houseDetails, price, salePrice } = data;
+  const { attachments, address, city, country, description, category, houseDetails, price, salePrice } = data;
   return (
     <Container className="shadow">
       <ImgContainer>
@@ -34,7 +34,7 @@ const HouseCard = ({data = {} }) => {
       </ImgContainer>
       <InfoContainer>
         <div className="subTitle inline">{city}, {country}, {description}</div>
-        <div className="infoDesc">{address || "Quincy St, Brooklyn, NY, USA"}</div>
+        <div className="infoDesc between"><span>{address || "Quincy St, Brooklyn, NY, USA"}</span><span>{category?.name || "Category"}</span></div>
         <MoreInfo>
           <MoreInfoItem>
             <Icons.Beds src={beds} />

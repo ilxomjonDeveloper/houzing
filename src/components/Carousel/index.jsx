@@ -5,6 +5,7 @@ import img1 from "../../assets/img/house1.png";
 import img2 from "../../assets/img/house2.png";
 
 const GenCarousel = () => {
+
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
@@ -21,11 +22,11 @@ const GenCarousel = () => {
 
   return (
     <Container>
-      <Carousel ref={slider} afterChange={onChange}>
+      <Carousel dots={true} ref={slider} afterChange={onChange}>
         <Img src={img2} />
         <Img src={img1} />
       </Carousel>
-      <Blur />
+      <Blur />  
       <Content>
         <Content.Title>Skyper Pool Partment</Content.Title>
         <Content.Desc className="subChild">112 Glenwood Ave Hyde Park, Boston, MA</Content.Desc>
