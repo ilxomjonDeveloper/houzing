@@ -12,10 +12,16 @@ const Container = styled.div`
   min-width: 343px;
   height: 429px;
   background: #ffffff;
-
+  margin: 10px;
   border: 1px solid #e6e9ec;
   border-radius: 3px;
+  transition: all .2s linear;
+  cursor: pointer;
+  :hover {
+    box-shadow: 0px 0px 8px 0px #999999bd;
+  }
 `;
+
 
 const ImgContainer = styled.div`
   position: relative;

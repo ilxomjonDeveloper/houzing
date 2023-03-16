@@ -24,7 +24,7 @@ import noimg from "../../assets/img/noimg.jpeg";
 const HouseCard = ({data = {} }) => {
   const { attachments, address, city, country, description, category, houseDetails, price, salePrice } = data;
   return (
-    <Container className="shadow">
+    <Container>
       <ImgContainer>
         <Img src={attachments && attachments[0].imgPath.includes("https") ? attachments[0].imgPath : noimg} alt="home img"/>
         <CardBtns>

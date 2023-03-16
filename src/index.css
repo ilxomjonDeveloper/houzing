@@ -81,6 +81,11 @@ body {
   display: none;
 }
 
+.cards-slick .slick-dots li button:before {
+  display: block;
+  color: #0061df;
+}
+
 ::-webkit-scrollbar {
   background: #b5b5b5;
   width: 10px;
