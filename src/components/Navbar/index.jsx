@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import Filter from "../Filter";
+import Footer from "../Footer";
 import Button from "../Generics/Button";
 import { Container, InnerWrapper, Link, Logo, Section, Wrapper } from "./style";
 
@@ -35,6 +36,7 @@ const Navbar = () => {
       </Wrapper>
       <Filter />
       <Outlet />
+      <Footer />
     </Container>
   );
 };

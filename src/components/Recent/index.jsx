@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const { REACT_APP_BASE_URL: url } = process.env;
 
-const Recommended = () => {
+const Recent = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch(`${url}/houses/list`)
@@ -30,7 +30,7 @@ const Recommended = () => {
   return (
     <Container>
       <Content>
-        <h1 className="title">Recommended</h1>
+        <h1 className="title">Recent Properties for Rent</h1>
         <div className="infoDesc">Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.</div>
       </Content>
       <Slider className="cards-slick" {...settings}>
@@ -48,4 +48,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default Recent;

@@ -26,7 +26,7 @@ const HouseCard = ({data = {} }) => {
   return (
     <Container>
       <ImgContainer>
-        <Img src={attachments && attachments[0].imgPath.includes("https") ? attachments[0].imgPath : noimg} alt="home img"/>
+        <Img src={attachments && attachments[0]?.imgPath.includes("https") ? attachments[0]?.imgPath : noimg} alt="home img"/>
         <CardBtns>
           <CardBtn primary>FEATURED</CardBtn>
           <CardBtn>FOR SALE</CardBtn>

@@ -9,10 +9,11 @@ const Container = styled.div`
   min-height: 350px;
   background: #ffffff;
 
-  margin-left: 50px;
+  margin-left: 60px;
   margin-bottom: 20px;
 
   border-radius: 3px;
+  cursor: pointer;
 `;
 
 const Content = styled.div`
@@ -39,8 +40,6 @@ const Img = styled.img`
   border-radius: 3px;
 `;
 
-const Icons = styled.img``;
-
 const Blur = styled.div`
   position: absolute;
   top: 0;
@@ -51,4 +50,4 @@ const Blur = styled.div`
   border-radius: 3px;
 `;
 
-export { Container, Img, Content, Icons, Blur };
+export { Container, Img, Content, Blur };

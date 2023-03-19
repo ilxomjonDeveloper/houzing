@@ -34,7 +34,7 @@ const Blur = styled.div`
   bottom: 5px;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
 `;
 
 const Content = styled.div`

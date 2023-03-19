@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./style";
+import { Container, Content } from "./style";
 import CategoryCard from "../CategoryCard";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const Category = () => {
       .then((res) => setData(res?.data || []));
   }, []);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const settings = {
     dots: true,
@@ -28,12 +28,22 @@ const Category = () => {
 
   return (
     <Container>
+      <Content>
+        <div className="title">Category</div>
+        <div className="infoDesc">
+          Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        </div>
+      </Content>
       <Slider {...settings}>
-        {
-          data.map((value)=>{
-            return <CategoryCard onClick={() => navigate(`/properties?category_id=${value?.id}`)} key={value.id} data={value} />
-          })
-        }
+        {data.map((value) => {
+          return (
+            <CategoryCard
+              onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+              key={value.id}
+              data={value}
+            />
+          );
+        })}
       </Slider>
     </Container>
   );

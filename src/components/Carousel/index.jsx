@@ -23,8 +23,8 @@ const GenCarousel = () => {
   return (
     <Container>
       <Carousel dots={true} ref={slider} afterChange={onChange}>
-        <Img src={img2} />
         <Img src={img1} />
+        <Img src={img2} />
       </Carousel>
       <Blur />  
       <Content>
