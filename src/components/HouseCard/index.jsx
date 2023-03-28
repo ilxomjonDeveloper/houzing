@@ -21,10 +21,10 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 
 import noimg from "../../assets/img/noimg.jpeg";
 
-const HouseCard = ({data = {} }) => {
+const HouseCard = ({data = {}, onClick }) => {
   const { attachments, address, city, country, description, category, houseDetails, price, salePrice } = data;
   return (
-    <Container>
+    <Container onClick={onClick}>
       <ImgContainer>
         <Img src={attachments && attachments[0]?.imgPath.includes("https") ? attachments[0]?.imgPath : noimg} alt="home img"/>
         <CardBtns>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { navbar } from "../../utils/navbar";
 import Filter from "../Filter";
 import Footer from "../Footer";
@@ -8,7 +8,7 @@ import { Container, InnerWrapper, Link, Logo, Section, Wrapper } from "./style";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
   return (
     <Container>
       <Wrapper>
@@ -18,23 +18,27 @@ const Navbar = () => {
           </Section>
           <Section>
             {navbar.map(({ title, path, hidden }, index) => {
-              return !hidden && (
-                <Link
-                  key={index}
-                  to={path}
-                  className={({ isActive }) => isActive && "active"}
-                >
-                  {title}
-                </Link>
+              return (
+                !hidden && (
+                  <Link
+                    key={index}
+                    to={path}
+                    className={({ isActive }) => isActive && "active"}
+                  >
+                    {title}
+                  </Link>
+                )
               );
             })}
           </Section>
           <Section>
-            <Button onClick={()=>navigate("/signin")} type="dark">Sign In</Button>
+            {location.pathname !== "/signin" && <Button onClick={() => navigate("/signin")} type="dark">
+              Sign In
+            </Button>}
           </Section>
         </InnerWrapper>
       </Wrapper>
-      <Filter />
+      { location.pathname !== "/signin" && <Filter />}
       <Outlet />
       <Footer />
     </Container>
