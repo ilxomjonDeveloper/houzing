@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 const { REACT_APP_BASE_URL } = process.env;
 
 export const useRequest = () => {
+  const navigate = useNavigate();
   const request = async ({ url, method = "GET", body = {}, token, headers={} }) => {
     headers["Content-Type"] = "application/json";
 
@@ -15,11 +16,11 @@ export const useRequest = () => {
     })
       .then((res) => res.json())
       .then(res => res)
-      // .then((res) => {
-      //   if(!res) {
-      //     navigate(`/signin`)
-      //   } else return res;
-      // })
+      .then((res) => {
+        if(!res) {
+          navigate(`/signin`)
+        } else return res;
+      })
   };
   return request;
 };
