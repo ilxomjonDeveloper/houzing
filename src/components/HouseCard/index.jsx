@@ -33,7 +33,7 @@ const HouseCard = ({data = {}, onClick }) => {
         </CardBtns>
       </ImgContainer>
       <InfoContainer>
-        <div className="subTitle inline">{city}, {country}, {description}</div>
+        <div className="subTitle inline"><span>{city}, {country}, {description}</span></div>
         <div className="infoDesc between"><span>{address || "Quincy St, Brooklyn, NY, USA"}</span><span>{category?.name || "Category"}</span></div>
         <MoreInfo>
           <MoreInfoItem>

@@ -1,26 +1,38 @@
-import { useNavigate } from "react-router-dom";
-
+import { message } from "antd";
 const { REACT_APP_BASE_URL } = process.env;
 
 export const useRequest = () => {
-  const navigate = useNavigate();
-  const request = async ({ url, method = "GET", body = {}, token, headers={} }) => {
-    headers["Content-Type"] = "application/json";
+  const error = (err) => {
+    message.error(err || "Something error!");
+  };
 
-    if(token) headers.Authorization = `Bearer ${token}`
+  const request = async ({
+    me,
+    url,
+    method = "GET",
+    body = {},
+    token,
+    headers = {},
+  }) => {
+    if (method === "POST") headers["Content-Type"] = "application/json";
+    if (token)
+      headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
 
-    return fetch(`${REACT_APP_BASE_URL}${url}`, {
+    const options = {
       method,
       headers,
-      body,
-    })
-      .then((res) => res.json())
-      .then(res => res)
-      .then((res) => {
-        if(!res) {
-          navigate(`/signin`)
-        } else return res;
-      })
+      body: JSON.stringify(body),
+    };
+    try {
+      let res = await fetch(
+        `${me ? "http://ec2-3-140-188-131.us-east-2.compute.amazonaws.com:8081/api" : REACT_APP_BASE_URL}${url}`,
+        options
+      ).then((res) => res.json());
+      return res;
+    } catch (err) {
+      error(err);
+      return err;
+    }
   };
   return request;
 };

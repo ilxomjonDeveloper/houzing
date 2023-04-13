@@ -33,7 +33,7 @@ const Navbar = () => {
           </Section>
           <Section>
             {location.pathname !== "/signin" && <Button onClick={() => navigate("/signin")} type="dark">
-              Sign In
+              Login
             </Button>}
           </Section>
         </InnerWrapper>

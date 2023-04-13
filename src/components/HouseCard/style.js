@@ -57,6 +57,7 @@ const CardBtn = styled.button`
   font-weight: 600;
   font-size: 10px;
   line-height: 13px;
+  cursor: pointer;
 `;
 
 const MoreInfo = styled.div`

@@ -90,15 +90,14 @@ const Filter = () => {
           onChange={onChange}
           name="size" width={200} />
         <select name="sort" onChange={onChangeSort}>
-          <option value=""></option>
-          <option value="asc">O'suvchi</option>
+          <option value="asc" selected>O'suvchi</option>
           <option value="desc">Kamayuvchi</option>
         </select>
         <select
           defaultValue={query.get("category_id") || "Select"}
           onChange={onChangeCategory}
         >
-          <option value="default" disabled>Select Category</option>
+          <option value="default" disabled selected>Select Category</option>
           {data.map((value) => {
             return (
               <option value={value?.id} key={value.id}>

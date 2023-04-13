@@ -17,4 +17,11 @@ const Container = styled.div`
   gap: 20px;
 `;
 
-export { Container };
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px 0;
+`
+
+export { Container, Content };

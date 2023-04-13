@@ -37,7 +37,7 @@ const Recommended = () => {
         {data.map((value) => {
           return (
             <HouseCard
-              onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+              onClick={() => navigate(`/properties/${value?.id}`)}
               key={value.id}
               data={value}
             />

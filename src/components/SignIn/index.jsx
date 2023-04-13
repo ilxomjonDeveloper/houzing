@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 
 const SignIn = () => {
-  const [messageApi, contextHolder] = message.useMessage();
   const request = useRequest();
   const navigate = useNavigate();
   const [body, setBody] = useState({});
@@ -19,33 +18,25 @@ const SignIn = () => {
     });
   };
 
-  const onSubmit = () => {
-    // console.log(body)
-    request({
-      url: `/public/auth/login`,
-      method: "POST",
-      body: JSON.stringify(body),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res?.authenticationToken) {
-          navigate("/home");
-          messageApi.open({
-            type: "success",
-            content: "Successfully logged in!",
-          });
-        } else {
-          messageApi.open({
-            type: "warning",
-            content: "Email or password wrong!",
-          });
-        }
-      });
+  const info = () => {
+    message.success("Successfully logged in!");
+  };
+  const warning = () => {
+    message.warning("Email or password wrong!");
+  };
+
+  const onSubmit = async () => {
+    console.log(body);
+    let res = await request({me: true, url: '/public/auth/login', method: 'POST', body})
+    if (res?.authenticationToken) {
+      localStorage.setItem("token", res?.authenticationToken)
+      navigate("/home");
+      info();
+    } else warning();
   };
 
   return (
     <>
-      {contextHolder}
       <Container>
         <Wrapper>
           <div className="subTitle">Sign in</div>

@@ -1,6 +1,7 @@
 import React from "react";
 import SignIn from "../components/SignIn";
 import useId from "../hooks/useId";
+import Loader from "../components/Loader";
 // import HomePage from "../pages/Home";
 const PropertiesPage = React.lazy(() => import("../pages/Properties"));
 const HomePage = React.lazy(() => import("../pages/Home"));
@@ -12,7 +13,7 @@ export const navbar = [
   {
     id: useId,
     element: (
-      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+      <React.Suspense fallback={<Loader />}>
         <HomePage />
       </React.Suspense>
     ),
@@ -24,7 +25,7 @@ export const navbar = [
   {
     id: useId,
     element: (
-      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+      <React.Suspense fallback={<Loader />}>
         <PropertiesPage />
       </React.Suspense>
     ),
@@ -36,7 +37,7 @@ export const navbar = [
   {
     id: useId,
     element: (
-      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+      <React.Suspense fallback={<Loader />}>
         <HouseItemPage />
       </React.Suspense>
     ),
